@@ -1,10 +1,9 @@
-CC=gcc
+CC=g++
 CFLAGS=-I.
 DEPS = ElementaryParticle.h
 
-%.o: %.c $(DEPS)
+%.o: %.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-hellomake: analyzer.o ElementaryParticle.o
-	$(CC) -o analyzer analyzer.0 ElementaryParticle.o
-	
+make: analyzer.o ElementaryParticle.o
+	$(CC) -o analyzer analyzer.o ElementaryParticle.o
