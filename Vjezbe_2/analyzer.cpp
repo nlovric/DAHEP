@@ -1,30 +1,4 @@
-#include<iostream>
-using namespace std;
-
-class ElementaryParticle
-{
-	public:
-		ElementaryParticle(string n = "bla", float m = 2.0, string iB = "bla"){
-			cout << "Constructor called." << endl;
-			name = n;
-			mass = m;
-			isBoson = iB;
-		}
-
-		delete ElementaryParticle;
-
-		void printInfo()
-		{
-			cout << "Particle name is: "<< name << endl;
-			cout << "Particle mass is: " << mass << " GeV" << endl;
-			cout << "Is particle a boson? " << isBoson << endl;
-		}
-
-	private:
-		string name;
-		float mass;
-		string isBoson;
-};
+#include <ElementaryParticle.h>
 
 int main()
 {
