@@ -7,3 +7,8 @@ DEPS = ElementaryParticle.h
 
 make: analyzer.o ElementaryParticle.o
 	$(CC) -o analyzer analyzer.o ElementaryParticle.o
+
+.PHONY: clean
+
+clean:
+	-rm edit $(objects)
