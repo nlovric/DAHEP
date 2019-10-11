@@ -1,0 +1,6 @@
+Particle name is: Higgs boson
+Particle mass is: 126 GeV
+Is particle a boson? Yes
+Particle name is: top quark
+Particle mass is: 173 GeV
+Is particle a boson? No

@@ -1,0 +1,4 @@
+total 8
+-rw-r--r--. 1 nlovric nlovric  0 Lis  1 11:16 output_3.txt
+-rw-r--r--. 1 nlovric nlovric 39 Lis  1 10:47 Zadatak_2.txt
+-rwxr-xr-x. 1 nlovric nlovric 18 Lis  1 11:15 Zadatak_3.sh
