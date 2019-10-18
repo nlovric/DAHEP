@@ -2,33 +2,13 @@
 
 int main()
 {
-	ElementaryParticle H("Higgs boson", 126, "Yes");
-	ElementaryParticle t("top quark", 173, "No");
-	ElementaryParticle Z("Z boson", 91.2, "Yes");
-	ElementaryParticle *ptrElePart;    //Declare pointer to the class ElementaryParticle.
+	ElementaryParticle *Higgs;
 
-	//Drugi način
-	ptrElePart = &Z;
-	ptrElePart->printInfo();
+	Higgs=new ElementaryParticle("Higgs", 125, true);
 
-	ptrElePart = &H;
-	ptrElePart->printInfo();
+	Higgs->ParticleMomentum(32, 22, 45);
 
-	ptrElePart = &t;
-	ptrElePart->printInfo();
-
-	//Prvi način
-	/*Higgs.name = "Higgs boson";
-	Higgs.mass = 126;
-	Higgs.isBoson = "Yes";
-
-	t.name = "top quark";
-	t.mass = 173;
-	t.isBoson = "No";
-
-	Higgs.printInfo();
-	t.printInfo();*/
-
+	Higgs->transMomentum();
 
 	return 0;
 }
