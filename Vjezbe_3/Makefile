@@ -11,4 +11,4 @@ make: analyzer.o ElementaryParticle.o
 .PHONY: clean
 
 clean:
-	rm -rf *.o analyzer
+	-rm edit $(objects)
