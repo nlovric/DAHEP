@@ -2,7 +2,7 @@
 #include<fstream>
 #include <ElementaryParticle.h>
 
-using namespace std; //zašto i ovdje i u ElementaryParticle.h?
+using namespace std; //zašto i ovdje i u ElementaryParticle.h? -> Ne triba.
 
 int main(){
 	int x_rand, y_rand, z_rand;
