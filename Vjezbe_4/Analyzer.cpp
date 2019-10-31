@@ -14,9 +14,6 @@ void Analyzer::readFile(string _inFileName){
 		while (getline(_inFile, line)){
 			stringstream linestream(line);
 
-			// Since we know that first line of the file only describes data skip reading it into variables
-	
-
 			//Read the file line and store it in dedicated variables.
 			linestream >> _EventNumber >> _product1_Name >> _product1_isBoson >> _product1_mass >> _product1_px >> _product1_py >> _product1_pz >> _product1_E >> _product1_pT
 										>> _product2_Name >> _product2_isBoson >> _product2_mass >> _product2_px >> _product2_py >> _product2_pz >> _product2_E >> _product2_pT;
@@ -29,6 +26,7 @@ void Analyzer::readFile(string _inFileName){
 void Analyzer::ConvertTxtToRootFile(string _inFileName){
 	ifstream _inFile;
 	string line;
+	int k=0; // cijeli broj koji cemo iskoristiti da prvi red .txt file-a (header-e) ne pošaljemo tree-u 
 
 	TFile *_outFile = new TFile("Analysis.root", "recreate");
 	// create a TTree
@@ -62,14 +60,16 @@ void Analyzer::ConvertTxtToRootFile(string _inFileName){
 		while (getline(_inFile, line)){
 			stringstream linestream(line);
 
-			// Since we know that first line of the file only describes data skip reading it into variables
-	
-
 			//Read the file line and store it in dedicated variables.
 			linestream >> _EventNumber >> _product1_Name >> _product1_isBoson >> _product1_mass >> _product1_px >> _product1_py >> _product1_pz >> _product1_E >> _product1_pT
 										>> _product2_Name >> _product2_isBoson >> _product2_mass >> _product2_px >> _product2_py >> _product2_pz >> _product2_E >> _product2_pT;
 
-			tree->Fill();
+			// Since we know that first line of the file only describes data skip reading it into variables
+			if (k>0) {
+				tree->Fill();
+			}
+
+			k++;
 		}
 	}
 	tree->Write();

@@ -12,7 +12,6 @@ int main(){
 	file.open ("Analysis.txt");
 
 	ElementaryParticle *Higgs;
-
 	Higgs = new ElementaryParticle("Higgs", 125.6, true); //deklaracija Higgsa koji ce se raspadati
 
 	ElementaryParticle *product_1, *product_2; //deklaracija dviju čestica koje su produkti raspada
@@ -31,7 +30,7 @@ int main(){
 
 		Higgs->bosonDecay(product_1, product_2);
 
-		file << i << " " << product_1->name << " " << product_1->isBoson << " " << product_1->mass << " "
+		file << i+1 << " " << product_1->name << " " << product_1->isBoson << " " << product_1->mass << " "
 						 << product_1->px << " " << product_1->py << " " << product_1->pz << " " << product_1->E << " " << product_1->p_T << " "
 						 << product_2->name << " " << product_2->isBoson << " " << product_2->mass << " "
 						 << product_2->px << " " << product_2->py << " " << product_2->pz << " " << product_2->E << " " << product_2->p_T << endl;

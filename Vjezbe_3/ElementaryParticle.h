@@ -24,6 +24,8 @@ class ElementaryParticle{
 
 		void setInfo(string, float, bool);
 
+		void set_pT();
+
 		void transverseP();
 
 		void printInfo();

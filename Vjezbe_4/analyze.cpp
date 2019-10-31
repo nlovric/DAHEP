@@ -8,7 +8,7 @@ int main(){
 	//analyzer->readFile("Analysis.txt");
 	analyzer->ConvertTxtToRootFile("Analysis.txt");
 
-
+	analyzer->~Analyzer();
 
 	return 0;
 }

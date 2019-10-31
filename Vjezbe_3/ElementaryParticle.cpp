@@ -48,6 +48,10 @@ void ElementaryParticle::transverseP(){
 		cout << "Particle transverse momentum is: "<< p_T << endl;
 	}
 
+void ElementaryParticle::set_pT(){
+		p_T=sqrt(px*px+py*py);
+	}
+
 void ElementaryParticle::bosonDecay(ElementaryParticle *particle_1, ElementaryParticle *particle_2){
 	if(!isBoson){
 		cout << "Only boson decays are supported and " << name << " is not a boson." << endl;
@@ -85,6 +89,8 @@ void ElementaryParticle::bosonDecay(ElementaryParticle *particle_1, ElementaryPa
 	}
 
 	particle_1->setP(px*(random_number_x/100.), py*(random_number_y/100.), pz*(random_number_z/100.));
-	particle_2->setP(px - particle_1->px, py - particle_1->py, pz - particle_1->pz);
+	particle_1->set_pT();
 
+	particle_2->setP(px - particle_1->px, py - particle_1->py, pz - particle_1->pz);
+	particle_2->set_pT();
 }
