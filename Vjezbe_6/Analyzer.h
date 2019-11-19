@@ -13,10 +13,11 @@
 #include <TFile.h>
 #include <TLegend.h>
 #include <TH1.h>
-#include <TLorentzVector.h>
 #include <TH2.h>
+#include <TLorentzVector.h>
 #include <TStyle.h>
 #include <TCanvas.h>
+#include <TString.h>
 
 // Header file for the classes stored in the TTree if any.
 #include <vector>
@@ -1443,12 +1444,17 @@ public :
    virtual void     Loop();
    virtual Bool_t   Notify();
    virtual void     Show(Long64_t entry = -1);
-   virtual void     PlotHistogram();
+   virtual void     PlotHistogram(TString);
    virtual void     SavePlots(TCanvas*, TString);
 
-   TH1F *l1_Pt_histo, *l2_Pt_histo, *l3_Pt_histo, *l4_Pt_histo, *Higgs_recMass_histo;
+   TH1F *LeptonPt_histo[4], *LeptonEta_histo[4], *LeptonPhi_histo[4], *LeptonBDT_histo[4], *Higgs_recMass_histo;
    TCanvas *c, *c1;
-
+   TLorentzVector l1,l2,l3,l4,Z1,Z2,H;
+   TString histo_name;
+   TFile *input_file;
+   TTree *input_tree;
+   float gen_sum_weights, _event_weight;
+   TH1F *hCounters;
 };
 
 #endif
