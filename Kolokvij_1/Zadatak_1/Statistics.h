@@ -17,7 +17,7 @@ public:
 	void NormalDistribution(int, float, float);
 
 private:
-	float _pi;
-	float random_number;
+	float pi;
+	float x, y, r;
 	float P;
 };

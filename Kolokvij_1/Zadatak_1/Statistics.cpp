@@ -4,23 +4,27 @@ Statistics::Statistics(){}
 
 Statistics::~Statistics(){}
 
-void Statistics::CalculatePi(int _num_events)
+void Statistics::CalculatePi(int num_events)
 {
 	srand (time(NULL));
 	int N_uk=0, N_krug=0;
 
-	for (int i=0; i<_num_events; i++)
+	for (int i=0; i < num_events; i++)
 	{
-		random_number = rand()%1;
-		if (random_number < float(3.14/4.)){
+		x = (float) (rand()%100 - 50);
+		y = (float) (rand()%100 - 50);
+
+		r = sqrt(x*x + y*y);
+
+		if (r <= 50.){
 			N_krug++;
 		}
 
 		N_uk++;
 	}
 
-	_pi = 4*(N_krug/N_uk);
-	cout << "Pi je: " << _pi << endl;
+	pi = 4. * (float) (N_krug) / (float) (N_uk);
+	cout << "Pi je: " << pi << endl;
 }
 
 void Statistics::NormalDistribution(int x, float mu, float sig)
