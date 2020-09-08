@@ -14,10 +14,13 @@
 #include <TLegend.h>
 #include <TH1.h>
 #include <TH2.h>
+#include <TH1F.h>
 #include <TLorentzVector.h>
 #include <TStyle.h>
 #include <TCanvas.h>
 #include <TString.h>
+#include <TMath.h>
+#include <TF1.h>
 
 // Header file for the classes stored in the TTree if any.
 #include <vector>
@@ -64,14 +67,16 @@ public :
    virtual void     Loop();
    virtual Bool_t   Notify();
    virtual void     Show(Long64_t entry = -1);
-   virtual void     DrawHisto(TString);
+   virtual void     DrawHisto();
    virtual void     SavePlots(TCanvas*, TString);
 
+   //deklaracija objekata koje namjeravamo koristiti
    private:
-   TH1F *histo;
-   TH1F *pT1_histo, *pT2_histo, *resP_histo;
+   TH1F *pT1_histo, *pT2_histo, *recM_histo;
    TCanvas *c;
-   TLorentzVector *resP, *p1, *p2;
+   TLorentzVector recP, p1, p2;
+   TF1 *function;
+   TLegend *legend, *legend_recP;
 };
 
 #endif
